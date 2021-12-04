@@ -68,6 +68,6 @@ app.post('/', async(req, res) => {
     //return res.json({filePath: filePath, output: output});
 });
 
-app.listen(5000, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log("Server Running");
 });
