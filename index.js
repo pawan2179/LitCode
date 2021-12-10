@@ -3,8 +3,6 @@ const cors = require("cors");
 const app = express();
 const axios = require('axios');
 
-const { generateFile } = require("./generateFile");
-const { executeCpp } = require("./executeCpp");
 const { response } = require("express");
 
 app.use(express.urlencoded({ extended: true }));
