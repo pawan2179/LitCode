@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow:hidden;
+    height: 100vh;
+}
+
 body {
     background-color: #11052cc4;
 }
@@ -49,6 +54,19 @@ header {
 
 .search-box::placeholder {
     color: #FFB740;
+}
+
+.lang-field {
+    background-color: #11052C;
+    color: #FFB740;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    position: absolute;
+    top: 3.5%;
+    left: 54.75%;
+    width: 6rem;
 }
 
 .container {
@@ -117,7 +135,7 @@ header {
     gap: 1rem;
     justify-content: flex-end;
     align-items: center;
-    margin: 0.4rem 0;
+    margin: 0.1rem 0;
     height: fit-content;
 }
 

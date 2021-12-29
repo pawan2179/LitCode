@@ -22,9 +22,6 @@
  <header>
      <div class="logo">
          <h1>LitCode</h1>
-         <div class="lang-selector">
-             
-         </div>
      </div>
 
      <div class="search-div">
@@ -34,7 +31,18 @@
  </header>  
  
  <form method="post" action="/">
-
+    <select name="language" class="lang-field">
+        <option value="<%=language%>" selected><%=language%></option> 
+        <option value="C++">C++</option>
+        <option value="C">C</option>
+        <option value="C#">C#</option>
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <option value="Kotlin">Kotlin</option>
+        <option value="Swift">Swift</option>
+        <option value="Ruby">Ruby</option>
+        
+    </select>
     <div class="container">
     
         <div class="left-panel">

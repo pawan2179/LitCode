@@ -15,15 +15,54 @@ app.set("view engine", "ejs");
 let output="";
 let code="";
 let inputData= "";
+let language = "C++";
+let langCode = "cpp";
+
+function languageMapper(language) {
+    switch(language) {
+        case "C++": {
+            langCode = "cpp";
+            break;
+        }
+        case "C": {
+            langCode = "c";
+            break;
+        }
+        case "C#": {
+            langCode = "cs";
+            break;
+        }
+        case "Python": {
+            langCode = "py";
+            break;
+        }
+        case "Java": {
+            langCode = "java";
+            break;
+        }
+        case "Kotlin": {
+            langCode = "kt";
+            break;
+        }
+        case "Swift": {
+            langCode = "swift";
+            break;
+        }
+        case "Ruby": {
+            langCode = "rb";
+            break;
+        }
+    }
+}
 
 app.get('/', (req, res) => {
-    res.render("index", {outputText: output, codeText: code, inputText: inputData});
+    res.render("index", {outputText: output, codeText: code, inputText: inputData, language: language});
 });
 
 
 app.post('/', async(req, res) => {
 
-    const language = "cpp";
+    //language = "cpp";
     code = req.body.codeText;
 
     inputData = req.body.inputText
@@ -32,9 +71,12 @@ app.post('/', async(req, res) => {
         return res.status(400).json({ success: false, error : "Empty code body" });
     }
 
+    language = req.body.language
+    languageMapper(language)
+
     var data = JSON.stringify({
         "code": code,
-        "language":language,
+        "language":langCode,
         "input": inputData
         });
 
